@@ -1,0 +1,154 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #E0E0E0;
+    --accent-color: #B388FF;
+    --hover-color: #D1C4E9;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.github-link {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.github-link:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.github-link svg {
+    width: 28px;
+    height: 28px;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+.counter {
+    font-size: 10rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    line-height: 1;
+    margin: 1rem 0;
+    text-shadow: 0 0 20px rgba(179, 136, 255, 0.3);
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.timeline-container {
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+}
+
+.timeline-event {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.event-date {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.event-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.event-description {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .counter {
+        font-size: 6rem;
+    }
+}
+
+.secret-button {
+    margin-top: 5rem;
+    opacity: 0.2;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.secret-button:hover {
+    opacity: 0.7;
+    text-decoration: none;
+    transform: scale(1.1);
+}
