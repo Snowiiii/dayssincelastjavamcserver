@@ -139,8 +139,12 @@ h2 {
     }
 }
 
+.also-try-link {
+    margin-top: 3rem;
+}
+
 .secret-button {
-    margin-top: 5rem;
+    margin-top: 2rem;
     opacity: 0.2;
     font-size: 1.5rem;
     cursor: pointer;
