@@ -69,7 +69,7 @@ h1 {
 .subtitle {
     font-size: 1.25rem;
     margin-top: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 0.75rem;
 }
 
 a {
@@ -92,39 +92,63 @@ h2 {
 }
 
 .timeline-container {
-    max-width: 600px;
+    max-width: 680px;
     width: 100%;
     text-align: left;
+    position: relative;
+    padding-left: 5.5rem;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2rem;
+    width: 2px;
+    background: rgba(179, 136, 255, 0.95);
 }
 
 .timeline-event {
-    border-left: 2px solid var(--accent-color);
-    padding-left: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     position: relative;
+    padding: 1rem 1.25rem 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(179, 136, 255, 0.12);
+    border-radius: 1rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.timeline-event:last-child {
+    margin-bottom: 0;
 }
 
 .timeline-event::before {
     content: '';
     position: absolute;
-    left: -7px;
-    top: 0;
-    width: 12px;
-    height: 12px;
+    left: calc(-3.975rem + 1px);
+    top: 50%;
+    width: 0.95rem;
+    height: 0.95rem;
     background-color: var(--accent-color);
     border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 6px rgba(179, 136, 255, 0.14);
 }
 
 .event-date {
     font-size: 0.9rem;
     color: var(--accent-color);
-    font-weight: bold;
-    margin-bottom: 0.25rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .event-title {
     font-size: 1.25rem;
     font-weight: 600;
+    line-height: 1.25;
 }
 
 .event-description {
@@ -137,10 +161,31 @@ h2 {
     .counter {
         font-size: 6rem;
     }
+
+    .timeline-container {
+        padding-left: 3.5rem;
+    }
+
+    .timeline-container::before {
+        left: 1.15rem;
+    }
+
+    .timeline-event {
+        padding: 0.9rem 1rem 0.9rem 1.1rem;
+        border-radius: 0.85rem;
+    }
+
+    .timeline-event::before {
+        left: -2.8rem;
+    }
+}
+
+.also-try-link {
+    margin-top: 3rem;
 }
 
 .secret-button {
-    margin-top: 5rem;
+    margin-top: 2rem;
     opacity: 0.2;
     font-size: 1.5rem;
     cursor: pointer;
