@@ -104,7 +104,7 @@ const fromScratchMinecraftServer = {
     { owner: "iChoco_Milk", name: "Go-Server", price: 0, date: "2024-07-09", url: "https://www.youtube.com/watch?v=6Yrv7VQX7Ow", status: "migrated", languages: ["Go"] },
     { owner: "macmv", name: "Bamboo", price: 0, url: "https://github.com/macmv/bamboo", date: "2022-01-27", status: "abandoned", languages: ["Rust"] },
     { owner: "SanderGielisse", name: "Enderstone", price: 0, date: "2015-09-01", url: "https://github.com/SanderGielisse/Enderstone", status: "abandoned", languages: ["Java"] },
-    { owner: "Rinny-inc", name: "Coral", price: 0, date: "2024-06-24", url: "https://github.com/Rinny-Inc/Coral", status: "maintained", languages: ["Rust"] },
+    { owner: "Rinny-inc", name: "Coral", price: 0, date: "2026-06-18", url: "https://github.com/Rinny-Inc/Coral", status: "maintained", languages: ["Rust"] },
   ],
   "1.12.2": [
     { owner: "Kek5chen", name: "KittyMC", price: 0, url: "https://github.com/Kek5chen/kittymc", date: "2025-03-29", status: "rarely-updated", languages: ["Rust"] },
