@@ -23,5 +23,6 @@ An interactive web platform designed to search, filter, and analyze the ecosyste
 
 <div align="center">
 <img src="./.github/example.png">
+<img src="./.github/tree.png">
 
 </div>
