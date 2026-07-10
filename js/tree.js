@@ -51,7 +51,6 @@ function renderD3ForkTree(rootProjectName) {
 
   const zoomBehavior = d3.zoom()
     .scaleExtent([0.4, 2])
-    .translateExtent([[-width * 0.5, -height * 2], [width * 3, height * 4]])
     .on("zoom", (event) => {
       svgGroup.attr("transform", event.transform);
     });

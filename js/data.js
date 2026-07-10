@@ -48,7 +48,6 @@ const minecraftforks = {
 
     { basedOn: "Paper", owner: "Scalebound", name: "FoxSpigot", price: 15, date: "2021-02-25", url: "https://builtbybit.com/threads/foxspigot-1-8-8-hitdetection-knockback-entityhider-15.678503/", status: "abandoned" },
     { basedOn: "Paper", owner: "Scalebound", name: "mSpigot", price: 10, date: "2021-06-04", url: "https://voxel.shop/product/1116/mspigot-tacospigot-fork-1-8-9/updates", status: "abandoned"},
-    { basedOn: "Paper", owner: "Scalebound", name: "mSpigot", price: 10, date: "2021-06-04", url: "https://voxel.shop/product/1116/mspigot-tacospigot-fork-1-8-9/updates", status: "abandoned"},
     { basedOn: "Paper", owner: "Scalebound", name: "pSpigot", price: 30, date: "2022-04-14", url: "https://voxel.shop/product/2232/pspigot-1-8-9/updates", status: "abandoned"},
 
     { basedOn: "Paper", owner: "MachineBreaker", name: "EvarSpigot", price: undefined, date: "2021-12-13", url: "https://www.youtube.com/watch?v=YgwEJHEeMqg", status: "abandoned" },
@@ -59,13 +58,15 @@ const minecraftforks = {
     { basedOn: "Paper", owner: "mcprotection", name: "AtomSpigot", price: 30, date: "2021-06-14", url: "https://www.youtube.com/watch?v=keojDc4Dpz4", status: "abandoned" },
     { basedOn: "Paper", owner: "ReachCarter", name: "ReliableSpigot", price: 75, date: "2019-05-28", url: "https://www.youtube.com/watch?v=FJvoYfUTwIM", status: "abandoned" },
     { basedOn: "Paper", owner: "Aegon Targaryen", name: "Aigot", price: 10, date: "2026-01-29", url: "https://builtbybit.com/resources/aigot-fixing-the-engine-not-hiding.91613/?ref=discover", status: "abandoned"},
-    { basedOn: "Paper", owner: "Refine", name: "CarbonSpigot", price: 35, date: "2023-08-04", url: "https://refinedev.org/resources/15", status: "maintained"},
-
-    { basedOn: "Spigot", owner: "call911", name: "LightSpigot8", price: 10, date: "2021-06-11", url: "https://builtbybit.com/resources/lightspigot-8-made-for-pvp-servers.19876/", status: "migrated" },
-    { basedOn: "Spigot", owner: "call911", name: "LightSpigot8 LITE", price: 0, date: "2020-08-14", url: "https://builtbybit.com/resources/lightspigot-8-lite-for-pvp-servers.16933/", status: "migrated" },
-    { basedOn: "Spigot", owner: "Tareko", name: "DytanicSpigot", price: 0, date: "2021-06-11", url: "https://archive.org/details/dytanicspigot", status: "abandoned" },
-   
+    { basedOn: "Paper", owner: "Refine", name: "CarbonSpigot", price: 40, date: "2021-08-19", url: "https://voxel.shop/product/1341/carbon", status: "maintained"},
     { basedOn: "Paper", owner: "keqno", name: "AzuriteSpigot", price: 70, date: "2024-10-15", url: "https://azuritedev.net/store/azuritespigot.4/", status: "maintained" },
+    { basedOn: "Paper", owner: "kalibrier", name: "FalchusSpigot", price: 0, date: "2026-01-10", url: "https://voxel.shop/product/9159/falchusspigot", status: "maintained"},
+    { basedOn: "Paper", owner: "TheFlareStar", name: "FurrySpigot", price: 0, date: "2025-01-10", url: "https://voxel.shop/product/7071/furryspigot-1-8-x", status: "abandoned" },
+    { basedOn: "Paper", owner: "vortex", name: "pSpigot 1.8.9", price: 23, date: "2025-02-24", url: "https://voxel.shop/product/7299/pspigot-1-8-9", status: "abandoned"},
+    { basedOn: "LightSpigot8 LITE", owner: "call911", name: "LightSpigot8", price: 10, date: "2021-06-11", url: "https://builtbybit.com/resources/lightspigot-8-made-for-pvp-servers.19876/", status: "migrated" },
+    { basedOn: "Paper", owner: "call911", name: "LightSpigot8 LITE", price: 0, date: "2020-08-14", url: "https://builtbybit.com/resources/lightspigot-8-lite-for-pvp-servers.16933/", status: "migrated" },
+    
+    { basedOn: "Spigot", owner: "Tareko", name: "DytanicSpigot", price: 0, date: "2021-06-11", url: "https://archive.org/details/dytanicspigot", status: "abandoned" },
 
     { basedOn: "DytanicSpigot", owner: "SquareCodeFX", name: "RiotSpigot", price: 0, date: "2021-06-18", url: "https://github.com/Eimer-Archive/riotspigot", status: "abandoned" },
 
@@ -95,6 +96,7 @@ const minecraftforks = {
   "1.19": [
     { basedOn: "Pufferfish", owner: "Pearl-Project", name: "Pearl", date: "2022-07-06", price: 0, url: "https://github.com/Pearl-Project/Pearl", status: "abandoned" },
     { basedOn: "Purpur", owner: "SharkurMC", name: "Sharkur", price: 0, date: "2022-06-17", url: "https://github.com/SharkurMC/Sharkur", status: "abandoned" },
+    { basedOn: "Purpur", owner: "Myungyu", name: "Packet", price: 6, date: "2023-12-17", url: "https://builtbybit.com/resources/packet-advanced-purpur-fork-for-packet.36445/?ref=discover", status: "abandoned"}
   ],
   "1.20": [
     { basedOn: "Paper", owner: "KaiijuMC", name: "Kaiiju", price: 0, date: "2023-02-10", url: "https://github.com/KaiijuMC/Kaiiju", status: "abandoned" },
@@ -107,10 +109,12 @@ const minecraftforks = {
     { basedOn: "Paper", owner: "MachineBreaker", name: "USpigot", price: { standard: 70 }, date: "2023-04-04", url: "https://www.reddit.com/r/admincraft/comments/19ckasy/anyone_used_universespigot_or_other_performance/", status: "maintained" },
     { basedOn: "Paper", owner: "NotIc3Off", name: "SolarSpigot", price: 28, date: "2026-06-22", url: "https://builtbybit.com/resources/solarspigot-lifetime.112637/?ref=discover", status: "abandoned"},
     { basedOn: "Paper", owner: "ItzDaToxicPugYT", name: "Paper Jar Unlocked World Height", price: 0, date: "2026-04-04", url: "https://builtbybit.com/resources/paper-jar-unlocked-world-height.101824/?ref=discover", status: "abandoned"},
-    { basedOn: "Spigot", owner: "call911", name: "LightSpigot21", price: 20, date: "2020-11-07", url: "https://builtbybit.com/resources/light-spigot-21-lightning-performance.17753/", status: "maintained" },
+    { basedOn: "Paper", owner: "call911", name: "LightSpigot21", price: 20, date: "2020-11-07", url: "https://builtbybit.com/resources/light-spigot-21-lightning-performance.17753/", status: "maintained" },
     { basedOn: "Paper", owner: "pufferfish-gg", name: "Pufferfish", price: 0, date: "2021-11-09", url: "https://github.com/pufferfish-gg/Pufferfish", status: "abandoned" },
-    { basedOn: "Leaf", owner: "TheFlareStar", name: "CrazyLeaf", price: 12.34, date: "2025-04-07", url: "https://builtbybit.com/resources/crazyleaf-modern-spigot-fork.64180/", status: "abandoned" },
+    { basedOn: "Paper", owner: "Scalebound", name: "dSpigot", price: 20, date: "2025-07-28", url: "https://voxel.shop/product/8182/dspigot", status: "abandoned"},
     { basedOn: "Paper", owner: "keqno", name: "Kitara", price: 100, date: "2025-08-19", url: "https://builtbybit.com/resources/kitara-legacy-combat-modern-version.73999/?ref=discover", status: "abandoned" },
+    
+    { basedOn: "Leaf", owner: "TheFlareStar", name: "CrazyLeaf", price: 12.34, date: "2025-04-07", url: "https://builtbybit.com/resources/crazyleaf-modern-spigot-fork.64180/", status: "abandoned" },
   ],
   "latest": [
     { basedOn: "Vanilla", owner: "Bukkit", name: "Bukkit", price: 0, date: "2010-12-20", url: "https://github.com/Bukkit/Bukkit", status: "deprecated" },
@@ -179,6 +183,7 @@ const fromScratchMinecraftProxy = [
 const proxyForks = [
   { basedOn: "BungeeCord", owner: "PaperMC", name: "WaterFall", date: "2016-05-30", price: 0, url: "https://github.com/PaperMC/Waterfall/commit/3809083007dd97e3a947ed0b20cd6523c420f4db", status: "deprecated" },
   { basedOn: "BungeeCord", owner: "Scalebound", name: "zBungeeCord", date: "2019-03-28", price: 6, url: "https://builtbybit.com/resources/zbungeecord-1-7-x-1-8-x-bungeecord-fork.10187/", status: "abandoned" },
+  { basedOn: "BungeeCord", owner: "neziw", name: "ExtendedCord", date: "2022-10-23", price: 0, url: "https://voxel.shop/product/3041/extendedcord-1-8-1-19-x", status: "abandoned" },
 
   { basedOn: "BungeeCord", owner: "HexagonMC", name: "HexaCord", date: "2016-03-02", price: 0, url: "https://github.com/HexagonMC/BungeeCord", status: "abandoned" },
   { basedOn: "HexaCord", owner: "TheEasyPeasy", name: "GuardHexa", date: "2020-06-30", price: 0, url: "https://builtbybit.com/resources/guardhexa-trust-a-proven-brand.16180/?ref=discover", status: "abandoned" },
@@ -190,9 +195,12 @@ const proxyForks = [
   { basedOn: "WaterFall", owner: "xIsm4", name: "NullcordX", date: "2021-12-22", price: 14, url: "https://builtbybit.com/resources/nullcordx-highest-performance-proxy.22322/", status: "maintained" },
   { basedOn: "WaterFall", owner: "gatogamer", name: "InsaneProxy", date: "2021-12-28", price: 10, url: "https://builtbybit.com/resources/insaneproxy-a-high-optimized-anti-bot.22276/", status: "abandoned"},
   { basedOn: "WaterFall", owner: "fvzziek", name: "BetterWaterfall", date: "2026-07-08", price: 15, url: "https://builtbybit.com/resources/betterwaterfall.114371/?ref=discover", status: "abandoned"},
+  { basedOn: "WaterFall", owner: "realsuperuser", name: "XenonCord", date: "2024-09-26", price: 0, url: "https://builtbybit.com/resources/xenoncord.52172/?ref=discover", status: "rarely-updated"},
 
   { basedOn: "Velocity", owner: "RootBeerMC", name: "Velocity-CTD", date: "2025-08-29", price: 0, url: "https://github.com/GemstoneGG/Velocity-CTD", status: "maintained"},
-  { basedOn: "Velocity-CTD", owner: "LinsaFTW", name: "VeloFlame", date: "2025-10-27", price: 12, url: "https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/", status: "maintained"},
+  { basedOn: "Velocity", owner: "SSquadTeam", name: "ApiaryProxy", date: "2024-09-18", price: 0, url: "https://voxel.shop/product/6561/apiaryproxy-best-velocity-fork", status: "abandoned"},
+  { basedOn: "Velocity-CTD", owner: "LinsaFTW", name: "VeloFlame", date: "2025-10-27", price: 0, url: "https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/", status: "maintained"},
+  { basedOn: "VeloFlame", owner: "LinsaFTW", name: "VeloFlame PRO", date: "2025-10-27", price: 12, url: "https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/", status: "maintained"},
 ]
 
 // Flattens the grouped source objects above into one list of project records.
