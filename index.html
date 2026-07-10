@@ -1,140 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Days since the last Java Minecraft server release</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/LeavesMC/Leaves/master/images/icon.svg">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <a href="https://github.com/Snowiiii/dayssincelastjavamcserver" class="github-link" aria-label="View source on GitHub">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-    </a>
-    <main>
-        <h1>DAYS SINCE THE LAST JAVA MC SERVER RELEASE</h1>
-        <div id="counter" class="counter">0</div>
-        <p class="subtitle">Newest verified project: <a href="https://github.com/PlazmaMC/Thunderbolt" id="last-release-link">Thunderbolt</a> (<span id="last-release-date">25 February 2024</span>)</p>
-        <h2>TIMELINE</h2>
-        <div class="timeline-container" id="timeline"></div>
-        <a href="https://pumpkinmc.org/" class="secret-button" aria-hidden="true">🎃</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft Server Explorer</title>
+    <link rel="icon" type="image/x-icon" href="./images/pumpkin-logo.svg">
+
+    <meta
+      name="description"
+      content="Browse, filter and compare Minecraft server and proxy forks: author, version, language, price, what it's based on, and its full fork tree."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <div class="brand">
+          <img src="./images/pumpkin-logo.svg" alt="Pumpkin logo" class="header-logo" />
+          <div>
+            <h1><span class="hl">Minecraft</span> server explorer</h1>
+            <p>Servers &amp; proxies: forks and from-scratch projects</p>
+          </div>
+        </div>
+        <div class="header-stats">
+          <div class="stat">
+            <div class="num" id="stat-total">0</div>
+            <div class="label">Projects</div>
+          </div>
+          <div class="stat">
+            <div class="num" id="stat-forks">0</div>
+            <div class="label">Forks</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="content">
+        <!-- Filters -->
+        <aside class="filters" aria-label="Search filters">
+          <div class="filters-head">
+            <h2>Filters</h2>
+            <button type="button" class="reset-btn" id="reset-btn">Clear</button>
+          </div>
+
+          <form id="filter-form">
+            <div class="field">
+              <label for="f-name">Search by name</label>
+              <div class="select-wrap select-wrap-auto">
+                <input type="text" id="f-name" placeholder="e.g. Paper, Spigot…" autocomplete="off" />
+                <datalist id="name-list"></datalist>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-author">Author</label>
+              <div class="select-wrap select-wrap-auto">
+                <input type="text" id="f-author" list="author-list" placeholder="Any" autocomplete="off" />
+                <datalist id="author-list"></datalist>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-version">Version</label>
+              <div class="select-wrap">
+                <select id="f-version">
+                  <option value="">All</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-language">Language</label>
+              <div class="select-wrap">
+                <select id="f-language">
+                  <option value="">All</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-origin">Project type</label>
+              <div class="select-wrap">
+                <select id="f-origin">
+                  <option value="">Fork &amp; from scratch</option>
+                  <option value="fork">Fork (based on another)</option>
+                  <option value="scratch">From scratch</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-category">Category</label>
+              <div class="select-wrap">
+                <select id="f-category">
+                  <option value="">Server &amp; Proxy</option>
+                  <option value="server">Server</option>
+                  <option value="proxy">Proxy</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-status">Status</label>
+              <div class="select-wrap">
+                <select id="f-status">
+                  <option value="">All</option>
+                  <option value="maintained">Maintained</option>
+                  <option value="rarely-updated">Rarely updated</option>
+                  <option value="migrated">Migrated</option>
+                  <option value="deprecated">Deprecated</option>
+                  <option value="abandoned">Abandoned</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-price">Price</label>
+              <div class="select-wrap">
+                <select id="f-price">
+                  <option value="">Any</option>
+                  <option value="free">Free</option>
+                  <option value="paid">Paid</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Date range</label>
+
+              <strong>From</strong>
+              <div>
+                <input type="date" id="f-date-min" aria-label="From date" />
+              </div>
+
+              <strong>To</strong>
+              <div>
+                <input type="date" id="f-date-max" aria-label="To date" />
+              </div>
+
+            </div>
+
+          </form>
+        </aside>
+
+        <!-- Results -->
+        <section aria-label="Results">
+          <div class="results-head">
+            <div class="count"><b id="result-count">0</b> results</div>
+            <div class="sort-field">
+              <label for="f-sort">Sort</label>
+              <div class="select-wrap">
+                <select id="f-sort">
+                  <option value="name-asc">Name (A–Z)</option>
+                  <option value="name-desc">Name (Z–A)</option>
+                  <option value="date-desc">Date (newest)</option>
+                  <option value="date-asc">Date (oldest)</option>
+                  <option value="price-asc">Price (lowest)</option>
+                  <option value="price-desc">Price (highest)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="cards" id="cards"></div>
+          <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+        </section>
+      </div>
     </main>
 
-    <script>
-        const projects = [
-            { name: "Thunderbolt", date: "2024-02-25", url: "https://github.com/PlazmaMC/Thunderbolt" },
-            { name: "Luminol", date: "2023-11-26", url: "https://github.com/LuminolMC/Luminol" },
-            { name: "Canvas", date: "2023-10-28", url: "https://github.com/CraftCanvasMC/Canvas" },
-            { name: "Ketting", date: "2023-10-27", url: "https://github.com/kettingpowered/Ketting-1-20-x" },
-            { name: "PlazmaBukkit", date: "2023-03-06", url: "https://github.com/PlazmaMC/PlazmaBukkit" },
-            { name: "Folia", date: "2023-02-20", url: "https://github.com/PaperMC/Folia" },
-            { name: "ChikaCraft", date: "2023-01-26", url: "https://github.com/bitbloxhub/ChikaCraft" },
-            { name: "Kaiiju", date: "2023-01-09", url: "https://github.com/KaiijuMC/Kaiiju" },
-            { name: "Gale", date: "2022-11-24", url: "https://github.com/GaleMC/Gale" },
-            { name: "DivineMC", date: "2022-11-12", url: "https://github.com/BX-Team/DivineMC" },
-            { name: "Fusion", date: "2022-09-27", url: "https://github.com/RTUStudio/Fusion" },
-            { name: "Sakura", date: "2022-08-20", url: "https://github.com/etil2jz/Sakura" },
-            { name: "Cheetah", date: "2022-07-07", url: "https://github.com/gommehdnet/cheetah" },
-            { name: "Sharkur", date: "2022-06-17", url: "https://github.com/SharkurMC/Sharkur" },
-            { name: "Petal", date: "2022-06-14", url: "https://github.com/Bloom-host/Petal" },
-            { name: "Leaf", date: "2022-06-02", url: "https://github.com/Winds-Studio/Leaf" },
-            { name: "Pearl", date: "2022-03-14", url: "https://github.com/Pearl-Project/Pearl" },
-            { name: "graphene", date: "2021-12-08", url: "https://github.com/retrooper/graphene" },
-            { name: "Pufferfish", date: "2021-11-09", url: "https://github.com/pufferfish-gg/Pufferfish" },
-            { name: "Leaves", date: "2021-10-30", url: "https://github.com/LeavesMC/Leaves" },
-            { name: "Slice", date: "2021-09-21", url: "https://github.com/Cryptite/OldSlice" },
-            { name: "Mirai", date: "2021-09-17", url: "https://github.com/etil2jz/Mirai" },
-            { name: "Mist", date: "2021-07-15", url: "https://github.com/MinecraftMist/Mist" },
-            { name: "Patina", date: "2021-04-17", url: "https://github.com/PatinaMC/Patina" },
-            { name: "NFT Worlds", date: "2021-02-15", url: "https://github.com/NFT-Worlds/Server" },
-            { name: "SparklyPaper", date: "2021-02-24", url: "https://github.com/SparklyPower/SparklyPaper" },
-            { name: "MultiPaper", date: "2021-01-17", url: "https://github.com/MultiPaper/MultiPaper" },
-            { name: "Arclight", date: "2020-05-09", url: "https://github.com/IzzelAliz/Arclight" },
-            { name: "Cardboard", date: "2020-05-07", url: "https://github.com/CardboardPowered/cardboard" },
-            { name: "Yatopia", date: "2020-02-26", url: "https://github.com/YatopiaMC/Yatopia" },
-            { name: "Cleanstone", date: "2019-10-10", url: "https://github.com/CleanstoneMC/Cleanstone" },
-            { name: "Minestom", date: "2019-08-03", url: "https://github.com/Minestom/Minestom" },
-            { name: "Kettle", date: "2019-08-05", url: "https://github.com/KettleFoundation/Kettle" },
-            { name: "Purpur", date: "2019-04-30", url: "https://github.com/PurpurMC/Purpur" },
-            { name: "Akarin", date: "2019-04-15", url: "https://github.com/Akarin-project/Akarin" },
-            { name: "Mohist", date: "2019-02-10", url: "https://github.com/MohistMC/Mohist" },
-            { name: "Origami", date: "2019-01-10", url: "https://github.com/Minebench/Origami" },
-            { name: "Jettpack", date: "2018-11-15", url: "https://gitlab.com/Titaniumtown/JettPack" },
-            { name: "Airplane", date: "2018-09-10", url: "https://github.com/TECHNOVE/Airplane" },
-            { name: "Magma", date: "2018-07-20", url: "https://magmafoundation.org" },
-            { name: "Tuinity", date: "2018-05-20", url: "https://github.com/Spottedleaf/Tuinity" },
-            { name: "AtomMC", date: "2018-03-15", url: "https://github.com/josephworks/AtomMC" },
-            { name: "Crucible", date: "2017-10-05", url: "https://github.com/CrucibleMC/Crucible" },
-            { name: "CatServer", date: "2017-08-01", url: "https://github.com/Luohuayu/CatServer" },
-            { name: "Diorite", date: "2017-07-15", url: "https://github.com/Diorite/Diorite" },
-            { name: "HOSE", date: "2017-03-22", url: "https://github.com/softpak/HOSE" },
-            { name: "Canyon", date: "2017-02-01", url: "https://github.com/canyonmodded/canyon" },
-            { name: "Contigo", date: "2016-11-10", url: "https://github.com/gcallant/Contigo" },
-            { name: "Paper", date: "2016-08-31", url: "https://github.com/PaperMC/Paper" },
-            { name: "Uranium", date: "2016-05-15", url: "https://github.com/UraniumMC/Uranium" },
-            { name: "SportPaper", date: "2016-01-15", url: "https://github.com/Electroid/SportPaper" },
-            { name: "PandaSpigot", date: "2016-01-05", url: "https://github.com/hpfxd/PandaSpigot" },
-            { name: "Rush", date: "2015-11-15", url: "https://github.com/kangarko/Rush" },
-            { name: "NachoSpigot", date: "2015-10-20", url: "https://github.com/CobbleSword/NachoSpigot" },
-            { name: "Thermos", date: "2015-09-10", url: "https://github.com/CyberdyneCC/Thermos" },
-            { name: "Enderstone", date: "2015-09-01", url: "https://github.com/SanderGielisse/Enderstone" },
-            { name: "TacoSpigot", date: "2015-03-10", url: "https://tacospigot.github.io/" },
-            { name: "Sponge", date: "2014-09-14", url: "https://www.spongepowered.org/" },
-            { name: "EmpireCraft", date: "2014-07-10", url: "https://github.com/starlis/empirecraft" },
-            { name: "Project-Poseidon", date: "2014-06-10", url: "https://github.com/RhysB/Project-Poseidon" },
-            { name: "BukkitForge", date: "2013-04-10", url: "https://github.com/keepcalm/BukkitForge" },
-            { name: "Spigot", date: "2012-10-01", url: "https://www.spigotmc.org/wiki/buildtools/" },
-            { name: "MCPC+", date: "2012-07-20", url: "https://apocgaming.net/repo/jars/hybrid-servers/MCPC/" },
-            { name: "lightstone", date: "2011-02-11", url: "https://github.com/grahamedgecombe/lightstone" },
-            { name: "CraftBukkit", date: "2010-12-01", url: "https://www.spigotmc.org/wiki/buildtools/" },
-            { name: "Vanilla", date: "2009-05-17", url: "https://www.minecraft.net/download/server" }
-        ].sort((a, b) => new Date(b.date) - new Date(a.date));
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="./images/pumpkin-logo.svg" alt="Pumpkin logo" class="footer-logo" />
+          <span class="footer-name">Pumpkin</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer links">
+          <a href="https://docs.pumpkinmc.org/" target="_blank" rel="noopener noreferrer">Documentation</a>
+          <a href="https://github.com/Snowiiii/dayssincelastjavamcserver" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://discord.com/invite/wT8XjrjKkf" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://x.com/pumpkinmcdev" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://www.youtube.com/@PumpkinServer" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://github.com/sponsors/Snowiiii" target="_blank" rel="noopener noreferrer">Donate</a>
+        </nav>
+      </div>
+    </footer>
 
-        function formatDate(isoDate) {
-            return new Date(isoDate).toLocaleDateString('en-GB', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-        }
+    <!-- Fork tree modal -->
+    <div class="modal-overlay" id="tree-modal" role="dialog" aria-modal="true" aria-labelledby="tree-title">
+      <div class="modal">
+        <div class="modal-head">
+          <div>
+            <h3 id="tree-title">Fork tree</h3>
+            <p id="tree-subtitle"></p>
+          </div>
+          <button class="close-btn" id="tree-close" aria-label="Close">×</button>
+        </div>
+        <div id="tree-container"></div>
+        <div class="tree-controls">
+          <button id="zoom-in" title="Zoom in">+</button>
+          <button id="zoom-out" title="Zoom out">−</button>
+          <button id="zoom-reset" title="Reset view">⟲</button>
+        </div>
+      </div>
+    </div>
 
-        function renderTimeline() {
-            const timelineElement = document.getElementById('timeline');
-
-            if (!timelineElement) return;
-
-            timelineElement.innerHTML = projects.map((project) => `
-                <div class="timeline-event">
-                    <div class="event-date">${formatDate(project.date)}</div>
-                    <div class="event-title"><a href="${project.url}">${project.name}</a></div>
-                </div>
-            `).join('');
-        }
-
-        function updateCounter() {
-            const counterElement = document.getElementById('counter');
-            const dateElement = document.getElementById('last-release-date');
-            const linkElement = document.getElementById('last-release-link');
-
-            if (!counterElement) return;
-
-            const latestProject = projects[0];
-            const releaseDate = new Date(latestProject.date);
-            const today = new Date();
-
-            const diffTime = Math.abs(today - releaseDate);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-            counterElement.textContent = diffDays;
-            dateElement.textContent = formatDate(latestProject.date);
-            linkElement.textContent = latestProject.name;
-            linkElement.href = latestProject.url;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderTimeline();
-            updateCounter();
-        });
-    </script>
-</body>
+    <script type="module" src="./js/main.js"></script>
+  </body>
 </html>
