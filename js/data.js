@@ -25,6 +25,7 @@ const minecraftforks = {
     { basedOn: "Thermos", owner: "CrucibleMC", name: "Crucible", price: 0, date: "2019-11-17", url: "https://github.com/CrucibleMC/Crucible", status: "rarely-updated" },
     { basedOn: "KCauldron", owner: "UraniumMC", name: "Uranium", price: 0, date: "2016-05-15", url: "https://github.com/UraniumMC/Uranium", status: "abandoned" },
     { basedOn: "Cauldron", owner: "djoveryde", name: "KCauldron", price: 0, date: "2015-03-22", url: "https://github.com/djoveryde/KCauldron", status: "deprecated" },
+    { basedOn: "Vanilla", owner: "Bukkit", name: "Bukkit", price: 0, date: "2010-12-20", url: "https://github.com/Bukkit/Bukkit", status: "deprecated" },
   
     { basedOn: "TacoSpigot", owner: "QuiiBz", name: "qSpigot", price: undefined, date: "2020-01-13", url: "https://builtbybit.com/threads/%E2%9C%85-big-update-%E2%80%A2-qspigot-%E2%80%A2-entity-hider-chunk-unloading-%E2%80%A2-1-7-1-8.555998/", status: "abandoned"}
   ],
@@ -81,6 +82,7 @@ const minecraftforks = {
   "1.12": [
     { basedOn: "Spigot", owner: "KettleFoundation", name: "Kettle", date: "2019-02-21", price: 0, url: "https://github.com/KettleFoundation/Kettle", status: "abandoned" },
     { basedOn: "Spigot", owner: "josephworks", name: "AtomMC", date: "2019-02-22", price: 0, url: "https://github.com/josephworks/AtomMC", status: "abandoned" },
+    { basedOn: "Paper", owner: "Akarin-project", name: "Akarin", date: "2018-06-09", price: 0, url: "https://github.com/Akarin-project/Akarin", status: "abandoned" },
   ],
   "1.16": [
     { basedOn: "Paper", owner: "KR33PYK1NG", name: "Mist", date: "2021-08-25", price: 0, url: "https://github.com/MinecraftMist/Mist", status: "abandoned" },
@@ -88,6 +90,12 @@ const minecraftforks = {
     { basedOn: "Paper", owner: "Artitus", name: "PizzaSpigot", date: undefined, price: 0, url: "https://github.com/Artitus/PizzaSpigot", status: "abandoned" },
     { basedOn: "Paper", owner: "TheEasyPeasy", name: "GuardSpigot", date: "2022-04-26", price: 50, url: "https://builtbybit.com/resources/guardspigot-1-16-5-heavily-optimized.23711/?ref=discover", status: "abandoned" },
     { basedOn: "Paper", owner: "TheFlareStar", name: "PaimonSpigot", date: "2024-04-29", price: 15, url: "https://builtbybit.com/resources/paimonspigot-extremely-fast-spigot.43545/?ref=discover", status: "abandoned" },
+    { basedOn: "Paper", owner: "YatopiaMC", name: "Yatopia", date: "2020-2-26", price: 0, url: "https://github.com/YatopiaMC/Yatopia", status: "abandoned" },
+    { basedOn: "Paper", owner: "Minebench", name: "Origami", date: "2019-05-15", price: 0, url: "https://github.com/Minebench/Origami", status: "abandoned" },
+  ],
+  "1.17": [
+    { basedOn: "Paper", owner: "Tuinity", name: "Tuinity", date: "2018-09-23", price: 0, url: "https://github.com/Tuinity/Tuinity", status: "deprecated" },
+    { basedOn: "Tuinity", owner: "TECHNOVE", name: "Airplane", date: "2020-10-31", price: 0, url: "https://github.com/TECHNOVE/Airplane", status: "abandoned" },
   ],
   "1.18": [
     { basedOn: "Paper", owner: "Titaniumtown", name: "Jettpack", date: "2018-11-15", price: 0, url: "https://gitlab.com/Titaniumtown/JettPack", status: "abandoned" },
@@ -99,7 +107,7 @@ const minecraftforks = {
     { basedOn: "Purpur", owner: "Myungyu", name: "Packet", price: 6, date: "2023-12-17", url: "https://builtbybit.com/resources/packet-advanced-purpur-fork-for-packet.36445/?ref=discover", status: "abandoned"}
   ],
   "1.20": [
-    { basedOn: "Paper", owner: "KaiijuMC", name: "Kaiiju", price: 0, date: "2023-02-10", url: "https://github.com/KaiijuMC/Kaiiju", status: "abandoned" },
+    { basedOn: "Folia", owner: "KaiijuMC", name: "Kaiiju", price: 0, date: "2023-02-10", url: "https://github.com/KaiijuMC/Kaiiju", status: "abandoned" },
     { basedOn: "Paper", owner: "xism4", name: "ShieldSpigot", price: 20, date: "2025-02-08", url: "https://voxel.shop/product/6244/shieldspigot-1-20-4", status: "maintained"}
   ],
   "1.21": [
@@ -114,16 +122,20 @@ const minecraftforks = {
     { basedOn: "Paper", owner: "Scalebound", name: "dSpigot", price: 20, date: "2025-07-28", url: "https://voxel.shop/product/8182/dspigot", status: "abandoned"},
     { basedOn: "Paper", owner: "keqno", name: "Kitara", price: 100, date: "2025-08-19", url: "https://builtbybit.com/resources/kitara-legacy-combat-modern-version.73999/?ref=discover", status: "abandoned" },
     
+    { basedOn: "Folia", owner: "LeavesMC", name: "Lumina", price: 0, date: "2025-06-23", url: "https://github.com/LeavesMC/Lumina", status: "abandoned"},
+
     { basedOn: "Leaf", owner: "TheFlareStar", name: "CrazyLeaf", price: 12.34, date: "2025-04-07", url: "https://builtbybit.com/resources/crazyleaf-modern-spigot-fork.64180/", status: "abandoned" },
   ],
   "latest": [
-    { basedOn: "Vanilla", owner: "Bukkit", name: "Bukkit", price: 0, date: "2010-12-20", url: "https://github.com/Bukkit/Bukkit", status: "deprecated" },
     { basedOn: "Bukkit", owner: "CraftBukkit", name: "CraftBukkit", price: 0, date: "2011-06-21", url: "https://hub.spigotmc.org/stash/projects/CJB/repos/craftbukkit/browse", status: "maintained" },
     { basedOn: "CraftBukkit", owner: "SpigotMC", name: "Spigot", price: 0, date: "2012-12-21", url: "https://www.spigotmc.org/", status: "maintained" },
     { basedOn: "Spigot", owner: "PaperMC", name: "Paper", price: 0, date: "2010-12-21", url: "https://github.com/PaperMC/Paper", status: "maintained" },
     { basedOn: "Paper", owner: "PaperMC", name: "Folia", price: 0, date: "2021-06-12", url: "https://github.com/PaperMC/Folia/", status: "maintained" },
     { basedOn: "Paper", owner: "Winds-Studio", name: "Leaf", price: 0, date: "2022-06-02", url: "https://github.com/Winds-Studio/Leaf", status: "maintained" },
-    { basedOn: "Paper", owner: "PurpurMC", name: "Purpur", price: 0, date: "2019-05-16", url: "https://github.com/PurpurMC/Purpur", status: "maintained" }
+    { basedOn: "Paper", owner: "PurpurMC", name: "Purpur", price: 0, date: "2019-05-16", url: "https://github.com/PurpurMC/Purpur", status: "maintained" },
+    { basedOn: "Folia", owner: "LuminolMC", name: "Luminol", price: 0, date: "2023-11-26", url: "https://github.com/LuminolMC/Luminol", status: "migrated"},
+    { basedOn: "Paper", owner: "aikar", name: "EmpireCraft", price: 0, date: "2013-01-09", url: "https://github.com/starlis/empirecraft", status: "maintained" },
+    { basedOn: "Vanilla", owner: "Sponge", name: "SpongeVanilla", price: 0, date: "2015-04-20", url: "https://github.com/SpongePowered/SpongeVanilla/commit/2802b4378b2d91f40db8d183cb63ab4b9ab64e44", status: "maintained" }
   ],
 };
 
@@ -165,11 +177,15 @@ const fromScratchMinecraftServer = {
     { owner: "p2r3", name: "bareiron", price: 0, url: "https://github.com/p2r3/bareiron", date: "2025-08-11", status: "abandoned", languages: ["C"]}
   ],
   "latest": [
+    { owner: "Mojang", name: "Vanilla", price: 0, url: "https://es.minecraft.wiki/w/Java_Edition_Classic_0.0.15a_(Multiplayer_Test_1)", date: "2009-05-31", status: "maintained", languages: ["Java"] },
     { owner: "PumpkinMC", name: "Pumpkin", price: 0, url: "https://pumpkinmc.org/", date: "2024-07-31", status: "maintained", languages: ["Rust"] },
     { owner: "Quozul", name: "PicoLimbo", price: 0, url: "https://github.com/Quozul/PicoLimbo", date: "2025-05-14", status: "maintained", languages: ["Rust"] },
     { owner: "SteelMC", name: "Steel MC", price: 0, url: "https://steel-foundation.github.io/SteelDocs/", date: "2025-10-16", status: "maintained", languages: ["Rust"] },
     { owner: "TemperMC", name: "Temper", price: 0, url: "https://temper-mc.com/", date: "2026-04-30", status: "maintained", languages: ["Rust"] },
-    { owner: "Minestom", name: "Minestom", price: 0, url: "https://github.com/Minestom/Minestom", date: "2019-08-03", status: "maintained", languages: ["Java"]} 
+    { owner: "Minestom", name: "Minestom", price: 0, url: "https://github.com/Minestom/Minestom", date: "2019-08-03", status: "maintained", languages: ["Java"]},
+  ],
+  "bedrock": [
+    { owner: "pmmp", name: "PocketMine-MP", price: 0, url: "https://github.com/pmmp/PocketMine-MP", date: "2019-05-08", status: "deprecated", languages: ["PHP"] }
   ],
 };
 
@@ -177,7 +193,9 @@ const fromScratchMinecraftProxy = [
   { owner: "PaperMC", name: "Velocity", price: 0, date: "2019-01-15", url: "https://github.com/VelocityPowered/Velocity", status: "maintained", languages: ["Java"] },
   { owner: "SpigotMC", name: "BungeeCord", price: 0, date: "2013-10-04", url: "https://github.com/SpigotMC/BungeeCord", status: "maintained", languages: ["Java"] },
   { owner: "sammwyy", name: "Lure", price: 0, date: "2023-02-23", url: "https://github.com/sammwyy/Lure", status: "abandoned", languages: ["Rust"] },
-  { owner: "minekube", name: "Gate", price: 0, date: "2020-08-02", url: "https://github.com/minekube/Gate", status: "maintained", languages: ["Go"] }
+  { owner: "minekube", name: "Gate", price: 0, date: "2020-08-02", url: "https://github.com/minekube/Gate", status: "maintained", languages: ["Go"] },
+  { owner: "DragonetMC", name: "DragonProxy", price: 0, date: "2016-07-29", url: "https://github.com/DragonetMC/DragonProxy", status: "deprecated", languages: ["Java"] },
+  { owner: "GeyserMC", name: "Geyser", price: 0, date: "2019-07-08", url: "https://github.com/GeyserMC/Geyser", status: "maintained", languages: ["Java"] }
 ];
 
 const proxyForks = [
@@ -196,7 +214,7 @@ const proxyForks = [
   { basedOn: "WaterFall", owner: "gatogamer", name: "InsaneProxy", date: "2021-12-28", price: 10, url: "https://builtbybit.com/resources/insaneproxy-a-high-optimized-anti-bot.22276/", status: "abandoned"},
   { basedOn: "WaterFall", owner: "fvzziek", name: "BetterWaterfall", date: "2026-07-08", price: 15, url: "https://builtbybit.com/resources/betterwaterfall.114371/?ref=discover", status: "abandoned"},
   { basedOn: "WaterFall", owner: "realsuperuser", name: "XenonCord", date: "2024-09-26", price: 0, url: "https://builtbybit.com/resources/xenoncord.52172/?ref=discover", status: "rarely-updated"},
-
+  { basedOn: "WaterFall", owner: "PaperMC", name: "Travertine", date: "2016-06-27", price: 0, url: "https://github.com/PaperMC/Travertine", status: "deprecated" },
   { basedOn: "Velocity", owner: "RootBeerMC", name: "Velocity-CTD", date: "2025-08-29", price: 0, url: "https://github.com/GemstoneGG/Velocity-CTD", status: "maintained"},
   { basedOn: "Velocity", owner: "SSquadTeam", name: "ApiaryProxy", date: "2024-09-18", price: 0, url: "https://voxel.shop/product/6561/apiaryproxy-best-velocity-fork", status: "abandoned"},
   { basedOn: "Velocity-CTD", owner: "LinsaFTW", name: "VeloFlame", date: "2025-10-27", price: 0, url: "https://builtbybit.com/resources/veloflame-secure-minecraft-proxy.80990/", status: "maintained"},
